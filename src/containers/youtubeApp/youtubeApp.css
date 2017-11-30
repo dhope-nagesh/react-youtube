@@ -1,0 +1,14 @@
+.youtube-app-wrapper {
+  width: 80%;
+  margin: 10px auto;
+}
+
+.youtube-app-wrapper>.youtube-app-main-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+/* .youtube-app-main-wrapper {
+
+} */
