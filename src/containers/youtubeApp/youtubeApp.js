@@ -10,14 +10,14 @@ import {connect} from 'react-redux'
 
 import './youtubeApp.css'
 
-const client = new Youtube('AIzaSyAKG8H87flsQkrgtihCG7xZQWL9TQlKduE')
+const client = new Youtube('AIzaSyC_tGbIItJE6PxLgjY5rQ9u7-TM1TnQQoM')
 
 class YoutubeApp extends Component {
   onSelectHandler = index => {
     this.props.selectVideo(index)
   }
   componentDidMount() {
-    this.props.searchYoutube(client, 'Hashedin')
+    this.props.searchYoutube(client, 'JavaScript')
   }
   
   onSearch = (query) => {
