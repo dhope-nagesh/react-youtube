@@ -4,24 +4,22 @@ import VideoList from '../../components/videoList/videoList';
 import VideoPlayer from '../../components/videoPlayer/videoPlayer';
 
 import { searchYoutubeAPI, selectVideo } from './youtubeAppActions';
-import Youtube from 'simple-youtube-api';
+import apiClient from '../../apis';
 
 import {connect} from 'react-redux'
 
 import './youtubeApp.css'
-
-const client = new Youtube('AIzaSyC_tGbIItJE6PxLgjY5rQ9u7-TM1TnQQoM')
 
 class YoutubeApp extends Component {
   onSelectHandler = index => {
     this.props.selectVideo(index)
   }
   componentDidMount() {
-    this.props.searchYoutube(client, 'JavaScript')
+    this.props.searchYoutube(apiClient, 'JavaScript')
   }
   
   onSearch = (query) => {
-    this.props.searchYoutube(client, query)
+    this.props.searchYoutube(apiClient, query)
   }
   
   render() {
@@ -47,7 +45,6 @@ class YoutubeApp extends Component {
 
 
 const mapStateToProps = (state) => {
-  console.log(state)
   return {
     videoList: state.youtubeAppReducer.data,
     currentVideo: state.youtubeAppReducer.currentVideo

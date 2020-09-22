@@ -16,8 +16,9 @@ export const selectVideo = (index) => {
 // Async 
 export const searchYoutubeAPI = (client, query) => {
   return function(dispatch) {
-    client.searchVideos(query,10).then((data) =>{
-      dispatch(getData(data))
+    client.get(query).then((res) => {
+      const items = res.data.items || [];
+      dispatch(getData(items))
     })
   }
 }
